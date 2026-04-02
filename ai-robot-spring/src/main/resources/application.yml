@@ -1,6 +1,19 @@
 spring:
   application:
     name:ai-robot-spring
+  ai:
+    deepseek:
+      api-key: sk-ec30252a934d48d6b25ef469ee433d7d # 填写 DeepSeek Api Key
+      base-url: https://api.deepseek.com # DeepSeek 的请求 URL, 可不填，默认值为 api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat # 可访问 DeepSeek 官方文档：https://api-docs.deepseek.com/zh-cn/ ，来查看具体的模型名称
+          temperature: 0.8 # 用于控制生成文本的随机性和创造性。
 
 server:
   port:8080
+
+# 开启debug模式
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
