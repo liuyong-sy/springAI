@@ -41,3 +41,17 @@ ChatMemoryConfig类描述：
 MessageWindowChatMemory：它是具体的 ChatMemory 实现类，使用 “滑动窗口” 策略管理聊天记录。
 滑动窗口策略：保留最近的 N 条消息（这里是50条，默认值20），超出数量限制时自动移除旧消息。因为在 AI 对话中，限制上下文长度，可以避免超出模型的 Token 限制。
 ```
+
+```text
+ollama serve： 启动 Ollama 后台服务，首次安装后需启动服务才能使用其他命令（通常自动运行），默认启动在端口11434 上；
+ollama run <模型名>：下载并运行指定模型，进入交互式聊天界面；
+ollama stop：停止当前运行的模型；
+ollama pull <模型名>：下载模型到本地（不运行）；
+ollama list：查看所有已下载的本地模型，包含模型名称、大小、更新时间；
+ollama rm <模型名>：删除本地模型释放空间；
+ollama creat：创建自定义的模型；
+ollama show <模型名>：查看模型配置信息；
+ollama cp <源模型> <新名称>：复制模型并重命名；
+ollama ps：查看正在运行的模型进程；
+ollama push <用户名/模型名>：将自定义模型发布到 Ollama 仓库；
+```
