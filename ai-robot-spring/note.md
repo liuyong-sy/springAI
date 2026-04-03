@@ -33,3 +33,11 @@ Advisor 是 Spring AI 中的核心组件，用于在 AI 模型交互过程中动
 业务规则注入：例如限制模型输出范围或根据业务需求引导生成内容。
 跨模型兼容性：通过抽象接口设计，Advisor 可适配不同 AI 模型（如 DeepSeek、OpenAI 等），提升代码的可移植性。
 ```
+
+```text
+ChatMemoryConfig类描述：
+
+通过 @Resource 注解注入一个 ChatMemoryRepository 的实例。它用于存储聊天会话，当我们没有自定义外部存储时（如 Cassandra、MySQL），默认情况下，Spring AI 使用的是 InMemoryChatMemoryRepository 实现类，会将消息存储在内存中的 ConcurrentHashMap 中。
+MessageWindowChatMemory：它是具体的 ChatMemory 实现类，使用 “滑动窗口” 策略管理聊天记录。
+滑动窗口策略：保留最近的 N 条消息（这里是50条，默认值20），超出数量限制时自动移除旧消息。因为在 AI 对话中，限制上下文长度，可以避免超出模型的 Token 限制。
+```
