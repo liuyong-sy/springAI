@@ -42,8 +42,8 @@ public class ChatClientController {
      * @param message
      * @return
      */
-    @GetMapping(value = "/generateStream", produces = "text/html;charset=utf-8")
-    public Flux<String> generateStream(@RequestParam(value = "message", defaultValue = "你是谁？") String message) {
+    @GetMapping(value = "/generateStream1", produces = "text/html;charset=utf-8")
+    public Flux<String> generateStream1(@RequestParam(value = "message", defaultValue = "你是谁？") String message) {
         return chatClient.prompt()
                 .user(message) // 提示词
                 .stream() // 流式输出

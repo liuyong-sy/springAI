@@ -9,6 +9,21 @@ spring:
         options:
           model: deepseek-chat # 可访问 DeepSeek 官方文档：https://api-docs.deepseek.com/zh-cn/ ，来查看具体的模型名称
           temperature: 0.8 # 用于控制生成文本的随机性和创造性。
+    zhipuai:
+      base-url: https://open.bigmodel.cn/api/paas # 智谱 AI 的请求 URL, 可不填，默认值为 open.bigmodel.cn/api/paas
+      api-key: xxx # 填写智谱 AI 的 API Key, 该成你自己的
+      chat:
+        options: # 模型参数
+          model: glm-4-air # 模型名称，使用智谱 AI 哪个模型
+          temperature: 0.7 # 温度值
+
+    openai:
+      base-url: https://api.zhizengzeng.com/v1 # OpenAI 服务的访问地址，这里使用的第三方代理商：智增增
+      api-key: xxx  # 填写智增增的 API Key, 该成你自己的
+      chat:
+        options:
+          model: gpt-4o # 模型名称
+          temperature: 0.7 # 温度值
   ollama:
     base-url: http://localhost:11434 # Ollama 服务的访问地址, 11434 端口是 Ollama 默认的启动端口
     chat:
